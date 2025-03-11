@@ -1,0 +1,5 @@
+e:\AI-Project\AutoClick\AutoClick\obj\Debug\net9.0\AutoClick.GeneratedMSBuildEditorConfig.editorconfig
+e:\AI-Project\AutoClick\AutoClick\obj\Debug\net9.0\AutoClick.AssemblyInfoInputs.cache
+e:\AI-Project\AutoClick\AutoClick\obj\Debug\net9.0\AutoClick.AssemblyInfo.cs
+e:\AI-Project\AutoClick\AutoClick\obj\Debug\net9.0\AutoClick.csproj.CoreCompileInputs.cache
+e:\AI-Project\AutoClick\AutoClick\obj\Debug\net9.0\AutoClick.MvcApplicationPartsAssemblyInfo.cache
