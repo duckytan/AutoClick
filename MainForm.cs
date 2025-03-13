@@ -156,11 +156,12 @@ namespace 多窗口后台模拟点击器
             Logger.Log(Logger.LogLevel.Info, "MainForm初始化完成");
         }
 
+        private string WinFormTitle = "多窗口后台模拟点击器 0.3 By Ducky錡 + DeepSeek R1 @52pojie";
         #region 窗体初始化
         private void InitializeComponent()
         {
             // 窗体基本设置
-            this.Text = "多窗口后台模拟点击器 0.3 By Ducky錡 + DeepSeek R1 @52pojie";
+            this.Text = $"[已停止] {WinFormTitle}";
             this.Size = new Size(620, 380);
             this.StartPosition = FormStartPosition.CenterScreen;
             
@@ -1871,7 +1872,7 @@ namespace 多窗口后台模拟点击器
             }
             
             // 更新状态显示
-            this.Text = isRunning ? "多窗口后台模拟点击器 [运行中]" : "多窗口后台模拟点击器 [已停止]";
+            this.Text = isRunning ? $"[运行中] {WinFormTitle}" : $"[已停止] {WinFormTitle}";
         }
 
         private void DataGridTasks_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -2148,12 +2149,22 @@ namespace 多窗口后台模拟点击器
                     limitedWindowTitle = limitedWindowTitle.Substring(0, 13) + "...";
                 }
                 
-                // 获取控件信息
+                // 获取控件信息并限制长度
                 StringBuilder controlText = new StringBuilder(256);
                 GetWindowText(controlHandle, controlText, controlText.Capacity);
+                string limitedControlText = controlText.ToString();
+                if (limitedControlText.Length > 16)
+                {
+                    limitedControlText = limitedControlText.Substring(0, 13) + "...";
+                }
                 
                 StringBuilder controlClassName = new StringBuilder(256);
                 GetClassName(controlHandle, controlClassName, controlClassName.Capacity);
+                string limitedControlClass = controlClassName.ToString();
+                if (limitedControlClass.Length > 16)
+                {
+                    limitedControlClass = limitedControlClass.Substring(0, 13) + "...";
+                }
                 
                 // 获取进程信息
                 uint processId;
@@ -2185,10 +2196,10 @@ namespace 多窗口后台模拟点击器
                     "进程: {0}({1}) | 窗口: {2}(0x{3:X8}) | 控件: {4}({5},0x{6:X8})",
                     processName,
                     processId,
-                    limitedWindowTitle,  // 使用限制长度后的窗口标题
+                    limitedWindowTitle,
                     parentWindow.ToInt64(),
-                    controlText.ToString(),
-                    controlClassName.ToString(),
+                    limitedControlText,  // 使用限制长度后的控件文本
+                    limitedControlClass, // 使用限制长度后的控件类名
                     controlHandle.ToInt64()
                 );
                 

@@ -10,3 +10,4 @@ E:\AI-Project\AutoClick\AutoClick\obj\Debug\net472\AutoClick.exe
 E:\AI-Project\AutoClick\AutoClick\obj\Debug\net472\AutoClick.pdb
 E:\AI-Project\AutoClick\AutoClick\obj\Debug\net472\多窗口后台模拟点击器.MainForm.resources
 E:\AI-Project\AutoClick\AutoClick\obj\Debug\net472\AutoClick.csproj.GenerateResource.cache
+E:\AI-Project\AutoClick\AutoClick\obj\Debug\net472\AutoClick.sourcelink.json
